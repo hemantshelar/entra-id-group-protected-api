@@ -55,8 +55,11 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-nuget-
 
+      - name: list dir
+        run: ls
+
       - name: Build with dotnet
-        run: dotnet build entra-id-group-protected-api.sln --configuration Release
+        run: dotnet build **/entra-id-group-protected-api.sln --configuration Release
 
       - name: dotnet publish
         run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
