@@ -1,0 +1,6 @@
+@entra_id_group_protected_api_HostAddress = http://localhost:5192
+
+GET {{entra_id_group_protected_api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
