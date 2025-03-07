@@ -57,6 +57,13 @@ jobs:
 
       - name: list dir
         run: ls
+      - name: App Settings Variable Substitution
+        uses: microsoft/variable-substitution@v1
+        with:
+          files: ./entra-id-group-protected-api/appsettings.json
+        env:
+          CosmosDbSettings:ServiceEndpoint: ${{ secrets.COSMOSDBSETTINGS_SERVICEENDPOINT }}
+          CosmosDbSettings:AuthKey: ${{ secrets.COSMOSDBSETTINGS_AUTHKEY }}
 
       - name: Build with dotnet
         run: dotnet build ./entra-id-group-protected-api/entra-id-group-protected-api.sln --configuration Release
