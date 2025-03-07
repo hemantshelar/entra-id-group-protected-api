@@ -56,7 +56,9 @@ jobs:
             ${{ runner.os }}-nuget-
 
       - name: list dir
-        run: ls
+        run: |
+          chdir entra-id-group-protected-api
+          ls
       - name: App Settings Variable Substitution
         uses: microsoft/variable-substitution@v1
         with:
