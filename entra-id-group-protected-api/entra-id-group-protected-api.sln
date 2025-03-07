@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.13.35818.85 d17.13
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "entra-id-group-protected-api", "entra-id-group-protected-api\entra-id-group-protected-api.csproj", "{4B04A577-CF79-4D98-B114-02056D7F90BF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "entra-id-group-protected-api", "entra-id-group-protected-api\entra-id-group-protected-api.csproj", "{BCC75A36-6B0F-4630-ABC3-CEB56271FA39}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{4B04A577-CF79-4D98-B114-02056D7F90BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4B04A577-CF79-4D98-B114-02056D7F90BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4B04A577-CF79-4D98-B114-02056D7F90BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4B04A577-CF79-4D98-B114-02056D7F90BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCC75A36-6B0F-4630-ABC3-CEB56271FA39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCC75A36-6B0F-4630-ABC3-CEB56271FA39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCC75A36-6B0F-4630-ABC3-CEB56271FA39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCC75A36-6B0F-4630-ABC3-CEB56271FA39}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

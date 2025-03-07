@@ -1,9 +1,13 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Identity.Web.Resource;
 
 namespace entra_id_group_protected_api.Controllers;
 
+[Authorize]
 [ApiController]
-[Route("[controller]/[action]")]
+[Route("[controller]")]
+[RequiredScope(RequiredScopesConfigurationKey = "AzureAd:Scopes")]
 public class WeatherForecastController : ControllerBase
 {
     private static readonly string[] Summaries = new[]
@@ -28,11 +32,5 @@ public class WeatherForecastController : ControllerBase
             Summary = Summaries[Random.Shared.Next(Summaries.Length)]
         })
         .ToArray();
-    }
-
-    [HttpGet(Name = "Echo")]
-    public IActionResult Echo(string message)
-    {
-        return Ok(message);
     }
 }

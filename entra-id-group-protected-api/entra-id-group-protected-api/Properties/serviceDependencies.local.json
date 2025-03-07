@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "identityapp1": {
+      "connectionInfo": "App registration: SPN_ENTRA_ID_GROUP_PROTECTED_API_MANUAL, Tenant: harmoniousflair.com.au (NETORGFT17726763.onmicrosoft.com - Microsoft Entra ID)",
+      "type": "identityapp.default"
+    }
+  }
+}
