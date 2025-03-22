@@ -4,6 +4,8 @@ using Microsoft.Identity.Web;
 using Microsoft.Identity.Abstractions;
 using Microsoft.Identity.Web.Resource;
 using Microsoft.Extensions.DependencyInjection;
+using HFData;
+using Microsoft.EntityFrameworkCore;
 
 namespace entra_id_group_protected_api;
 
@@ -12,6 +14,13 @@ public class Program
     public static void Main(string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
+        builder.Configuration.AddUserSecrets<Program>();
+
+        builder.Services.AddDbContext<HFDbContext>(options =>
+        {
+            var conn = builder.Configuration.GetSection("HFDbContext:ConnectionString").Value;
+            options.UseSqlServer(conn);
+        });
 
         // Add services to the container.
         builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
