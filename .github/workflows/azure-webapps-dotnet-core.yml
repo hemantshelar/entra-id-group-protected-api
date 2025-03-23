@@ -55,11 +55,11 @@ jobs:
           key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
           restore-keys: |
             ${{ runner.os }}-nuget-
+      - name: Build with dotnet
+        run: dotnet build ./entra-id-group-protected-api/entra-id-group-protected-api.sln --configuration Release
 
       - name: list dir
-        run: |
-          cd entra-id-group-protected-api
-          cd entra-id-group-protected-api
+        run: |         
           ls
       - name: App Settings Variable Substitution
         uses: microsoft/variable-substitution@v1
@@ -69,9 +69,6 @@ jobs:
           AzureAd.Domain: ${{ secrets.DOMAIN }}
           AzureAd.TenantId: ${{ secrets.TENANTID }}
           AzureAd.ClientId: ${{ secrets.CLIENTID }}
-
-      - name: Build with dotnet
-        run: dotnet build ./entra-id-group-protected-api/entra-id-group-protected-api.sln --configuration Release
 
       - name: dotnet publish
         run: dotnet publish ./entra-id-group-protected-api/entra-id-group-protected-api.sln -c Release -o ${{env.DOTNET_ROOT}}/myapp
@@ -100,6 +97,18 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: .net-app
+
+      - name: list dir
+        run: |         
+          ls
+      - name: App Settings Variable Substitution
+        uses: microsoft/variable-substitution@v1
+        with:
+          files: './appsettings.json'
+        env:
+          AzureAd.Domain: ${{ secrets.DOMAIN }}
+          AzureAd.TenantId: ${{ secrets.TENANTID }}
+          AzureAd.ClientId: ${{ secrets.CLIENTID }}
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
