@@ -60,8 +60,10 @@ jobs:
 
       - name: dotnet publish
         run: dotnet publish ./entra-id-group-protected-api/entra-id-group-protected-api.sln -c Release -o ${{env.DOTNET_ROOT}}/myapp
-      - name: list dir
+      - name: List fils after publish
         run: |         
+          ls
+          cd ${{env.DOTNET_ROOT}}/myapp
           ls
       - name: App Settings Variable Substitution
         uses: microsoft/variable-substitution@v1
