@@ -73,7 +73,10 @@ jobs:
           AzureAd.Domain: ${{ secrets.DOMAIN }}
           AzureAd.TenantId: ${{ secrets.TENANTID }}
           AzureAd.ClientId: ${{ secrets.CLIENTID }}
-
+      - name: List file content
+        run: |         
+          cat ${{env.DOTNET_ROOT}}/myapp/appsettings.json
+          
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
