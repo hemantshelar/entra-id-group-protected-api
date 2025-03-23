@@ -102,9 +102,7 @@ jobs:
           name: .net-app
 
       - name: list dir
-        run: |
-          cd entra-id-group-protected-api
-          cd entra-id-group-protected-api
+        run: |         
           ls
       - name: App Settings Variable Substitution
         uses: microsoft/variable-substitution@v1
